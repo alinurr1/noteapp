@@ -12,13 +12,13 @@ export const Form = () => {
 
     if (value.trim()) {
       firebase.addNote(value.trim()).then(() => {
-        alert.show('Заметка была создана', 'success')
+        alert.show('Note has been created.', 'success')
       }).catch(() => {
-        alert.show('Что-то пошло не так', 'danger')
+        alert.show('Something went wrong.', 'danger')
       })
       setValue('')
     } else {
-      alert.show('Введите название заметки')
+      alert.show('Input your note.')
     }
   }
 
@@ -28,7 +28,7 @@ export const Form = () => {
         <input
           type="text"
           className="form-control"
-          placeholder="Введите название заметки"
+          placeholder="Input your note"
           value={value}
           onChange={e => setValue(e.target.value)}
         />
